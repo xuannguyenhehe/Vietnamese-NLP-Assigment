@@ -1,0 +1,8 @@
+1;Xe bus;3;nsubj;
+2;nào;1;dep;
+3;đến;0;Root;
+4;thành phố;3;obj;
+5;Hồ Chí Minh;4;compound;
+6;lúc;3;nmod;
+7;20:00HR;6;det;
+8;?;3;punct;
