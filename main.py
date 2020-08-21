@@ -32,9 +32,13 @@ def readCommand(argv):
 if __name__ == '__main__':
     options = readCommand(sys.argv)
     model = VietnameseNLP(options.modelRoot + '/' + options.modelFilename)
-    result_a = model.GrammaticalRelation(options.testRoot + '/' + options.testFilename)
+    clause = model.GrammaticalRelation(options.testRoot + '/' + options.testFilename)
+   
+    result_a = model.representationGrammaticalRelation(clause)
     print(result_a)
-    result_b = model.LogicalForm(result_a)
+  
+    logicalForm = model.logicalForm(clause)
+    result_b = model.representationLogicalForm(logicalForm)
     print(result_b)
     # result = model.approx_inference(options.testRoot + '/' + options.testFilename)
     # print('%0.5f' % result)
