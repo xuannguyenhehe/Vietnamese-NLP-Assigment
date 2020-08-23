@@ -56,8 +56,8 @@ def dependencyGrammar(lstWord, lstToken):
     #Find pobj
     pobj = [word for word in lstWord[indexVerb:] if lstToken[word].typ == "PRO_TIME"]
     if pobj:
-        indexPobj = lstWord.index(pobj)  
-        lstHead[pobj] = Head(indexPobj, pobj, np.array([indexPobj, indexVerb]), "pobj")
+        indexPobj = lstWord.index(pobj[0])  
+        lstHead[pobj[0]] = Head(indexPobj, pobj[0], np.array([indexPobj, indexVerb]), "pobj")
     #Find nmod
     for index in range(len(lstWord)):
         pro = lstWord[index]

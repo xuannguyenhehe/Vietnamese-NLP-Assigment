@@ -20,15 +20,15 @@ def readCommand(argv):
                       help='Root test directory which contains inputs')
     parser.add_option('--model',
                       dest='modelFilename',
-                      default='model05.txt',
+                      default='model01.txt',
                       help='File name which contains the model')                  
     parser.add_option('--input',
                       dest='testFilename',
-                      default="input05.txt",
+                      default="input01.txt",
                       help='File name which contains the input')
     parser.add_option('--output',
                       dest="outputFilename",
-                      default='output05.txt',
+                      default='output01.txt',
                       help='File name which contains the output')
     (options, _) = parser.parse_args(argv)
     return options
