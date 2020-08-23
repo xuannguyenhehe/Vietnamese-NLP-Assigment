@@ -1,0 +1,14 @@
+det_wh(Xe bus,nào)
+nsubj(đến,Xe bus)
+nobj(đến,Hồ Chí Minh)
+nmod(Hồ Chí Minh,thành phố)
+
+(WH-QUERY s1)
+(ĐẾN s1)
+(PRES s1)
+(AGENT s1 (XE BUS))
+(TO-LOC s1 (NAME H1 HỒ CHÍ MINH))
+
+(WH-QUERY(ĐẾN s1 PRES) s1 [AGENT s1 XE BUS][TO-LOC s1 NAME H1 HỒ CHÍ MINH])
+(PRINT-ALL ?b (BUS ?b)(ATIME ?b (NAME H1 HỒ CHÍ MINH)))
+B3 B4 B7 

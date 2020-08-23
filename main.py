@@ -20,22 +20,45 @@ def readCommand(argv):
                       help='Root test directory which contains inputs')
     parser.add_option('--model',
                       dest='modelFilename',
-                      default='model01.txt',
+                      default='model05.txt',
                       help='File name which contains the model')                  
     parser.add_option('--input',
                       dest='testFilename',
-                      default="input01.txt",
+                      default="input05.txt",
                       help='File name which contains the input')
+    parser.add_option('--output',
+                      dest="outputFilename",
+                      default='output05.txt',
+                      help='File name which contains the output')
     (options, _) = parser.parse_args(argv)
     return options
 
 if __name__ == '__main__':
     options = readCommand(sys.argv)
     model = VietnameseNLP(options.modelRoot + '/' + options.modelFilename)
-    result_a = model.GrammaticalRelation(options.testRoot + '/' + options.testFilename)
+    lstDependency = model.DependencyGrammar(options.testRoot + '/' + options.testFilename)
+    result = model.printDependencyGrammar(lstDependency)
+    print(result)
+
+    patternForm = model.PatternForm(lstDependency)
+    relationGrammar = model.RelationGrammar(patternForm)
+    result_a = model.printRelationGrammar(relationGrammar)
     print(result_a)
-    result_b = model.LogicalForm(result_a)
+
+    logicalForm = model.LogicalForm(relationGrammar)
+    result_b = model.printLogicalForm(logicalForm)
     print(result_b)
-    # result = model.approx_inference(options.testRoot + '/' + options.testFilename)
-    # print('%0.5f' % result)
+
+    retrieveForm = model.RetrieveForm(logicalForm)
+    result_c = model.printRetrieveForm(retrieveForm)
+    print(result_c)    
+
+    resultdb = model.resultDB(retrieveForm)
+    result_d = model.printResultDB(resultdb)
+    print(result_d)
+
+    f = open('./outputs/' + options.outputFilename, 'w', encoding='utf8')
+    writeline = result + '\n' + result_a + '\n' + result_b + '\n' + result_c + '\n' + result_d
+    f.write(writeline)
+    f.close()
    

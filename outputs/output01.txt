@@ -1,0 +1,17 @@
+det_wh(Xe bus,nào)
+nsubj(đến,Xe bus)
+nobj(đến,Huế)
+pobj(đến,20:00HR)
+nmod(Huế,thành phố)
+pmod(20:00HR,lúc)
+
+(WH-QUERY s1)
+(ĐẾN s1)
+(PRES s1)
+(AGENT s1 (XE BUS))
+(TO-LOC s1 (NAME H1 HUẾ))
+(AT-TIME s1 (NAME 21 20:00HR))
+
+(WH-QUERY(ĐẾN s1 PRES) s1 [AGENT s1 XE BUS][TO-LOC s1 NAME H1 HUẾ][AT-TIME s1 NAME 21 20:00HR])
+(PRINT-ALL ?b (BUS ?b)(ATIME ?b (NAME H1 HUẾ))(ATIME ?b (NAME 21 20:00HR)))
+Không tìm được dữ liệu

@@ -1,0 +1,7 @@
+Những;DET;
+xe;N;
+nào;DET;
+xuất phát;V;
+từ;P;
+thành phố;N;
+Hồ Chí Minh;PRO;

@@ -1,0 +1,12 @@
+det(xe bus,Những)
+nsubj(đi đến,xe bus)
+nobj(đi đến,Huế)
+
+(ĐI ĐẾN s1)
+(PRES s1)
+(AGENT s1 (XE BUS))
+(TO-LOC s1 (NAME H1 HUẾ))
+
+((ĐI ĐẾN s1 PRES) s1 [AGENT s1 XE BUS][TO-LOC s1 NAME H1 HUẾ])
+(PRINT-ALL ?b (BUS ?b)(ATIME ?b (NAME H1 HUẾ)))
+B1 B2 

@@ -2,6 +2,4 @@ Xe bus;N;
 nào;DET;
 đến;V;
 thành phố;N;
-Huế;PRO;
-lúc;P;
-20:00HR;PRO_TIME;
+Hồ Chí Minh;PRO;

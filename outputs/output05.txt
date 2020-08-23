@@ -1,0 +1,13 @@
+det(xe,Những)
+nsubj(xuất phát,xe)
+nobj(xuất phát,Hồ Chí Minh)
+nmod(Hồ Chí Minh,thành phố)
+
+(XUẤT PHÁT s1)
+(PRES s1)
+(AGENT s1 (XE))
+(TO-LOC s1 (NAME H1 HỒ CHÍ MINH))
+
+((XUẤT PHÁT s1 PRES) s1 [AGENT s1 XE][TO-LOC s1 NAME H1 HỒ CHÍ MINH])
+(PRINT-ALL ?b (BUS ?b)(DTIME ?b (NAME H1 HỒ CHÍ MINH)))
+B1 B2 

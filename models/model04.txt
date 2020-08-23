@@ -1,0 +1,5 @@
+Những;DET;
+xe bus;N;
+nào;DET;
+đi đến;V;
+Huế;PRO;
