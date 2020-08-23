@@ -307,6 +307,22 @@ class VietnameseNLP:
                 result += re + ' '
             return result
 
+    def logicalForm(self, clause):
+        logicalForm = []
+        if clause[0].relation == "WH" or clause[0].relation == "NAME" or clause[0].relation == "TIME": 
+            logicalForm.append(Logical(clause[0].relation, clause[0].name, clause[0].namevar))
+        else:
+            logicalForm.append(Logical("", clause[0].name, clause[0].namevar))
+        for child in clause[1:]:
+            if child.relation == "nsubj":
+                logicalForm.append(Logical("AGENT", child.namevar, self.logicalForm(child.name)))
+            elif child.relation == "obj":
+                logicalForm.append(Logical("THEME", child.namevar, self.logicalForm(child.name)))
+            elif child.relation == "nmod":
+                logicalForm.append(Logical("AT-TIME", child.namevar, self.logicalForm(child.name)))
+            else:
+                logicalForm.append(Logical(child.relation.upper(), child.namevar, self.logicalForm(child.name)))
+        return logicalForm
     def __extract_model(self, line):
         parts = line.split(';')
         name = parts[0]
