@@ -1,8 +1,0 @@
-Những;DET;
-xe;N;
-nào;DET;
-đi;V;
-Đà Nẵng;PRO;
-đến;V;
-thành phố;N;
-Hồ Chí Minh;PRO;

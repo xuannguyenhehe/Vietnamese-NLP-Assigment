@@ -1,7 +1,6 @@
 import numpy as np
 import re
 from pymongo import MongoClient
-import unidecode
 
 def cityName(name):
     if name == "HUẾ":
